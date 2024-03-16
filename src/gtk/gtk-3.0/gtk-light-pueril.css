@@ -6822,7 +6822,7 @@ window.background:not(.csd) > menu > menuitem > label:disabled {
 
 #MozillaGtkWidget > widget > scrolledwindow > textview text {
   background-color: transparent;
-  color: #242424;
+  color: #363636;
 }
 
 window.background.chromium {
