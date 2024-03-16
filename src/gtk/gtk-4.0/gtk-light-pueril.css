@@ -8297,7 +8297,7 @@ menubutton.flat.popup.sources-button > button image.calendar-color-image {
 @define-color selected_bg_color #97BB72;
 @define-color selected_fg_color #ffffff;
 @define-color insensitive_bg_color #fcfcfc;
-@define-color insensitive_fg_color alpha(rgba(50, 50, 50, 0.55), 0.5);
+@define-color insensitive_fg_color alpha(#323232, 0.5);
 @define-color insensitive_base_color #ffffff;
 @define-color theme_unfocused_fg_color #323232;
 @define-color theme_unfocused_text_color #363636;
@@ -8311,7 +8311,6 @@ menubutton.flat.popup.sources-button > button image.calendar-color-image {
 @define-color placeholder_text_color #A8A8A8;
 @define-color link_color #7ea951;
 @define-color content_view_bg #ffffff;
-/* Very contrasty background for text views (@theme_text_color foreground) */
 @define-color text_view_bg #ffffff;
 @define-color wm_title alpha(#323232, 0.8);
 @define-color wm_unfocused_title alpha(#323232, 0.5);
@@ -8319,6 +8318,7 @@ menubutton.flat.popup.sources-button > button image.calendar-color-image {
 @define-color wm_bg_unfocused white;
 @define-color wm_highlight #fafafa;
 @define-color wm_shadow alpha(black, 0.35);
+@define-color wm_border #e1e1e1;
 @define-color wm_button_close_bg #97BB72;
 @define-color wm_button_close_hover_bg #9BC78D;
 @define-color wm_button_close_active_bg #73BE81;

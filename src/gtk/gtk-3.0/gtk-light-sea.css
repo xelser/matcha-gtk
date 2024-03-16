@@ -177,6 +177,10 @@ assistant .sidebar label.highlight {
   color: #ffffff;
 }
 
+textview {
+  background-color: #ffffff;
+}
+
 .osd .scale-popup, popover.osd, popover.magnifier, .csd popover.osd, .csd popover.magnifier,
 popover.background.osd,
 popover.background.magnifier, .csd popover.background.osd, .csd popover.background.magnifier, .osd {
@@ -419,6 +423,29 @@ treeview entry.flat, treeview entry {
 
 treeview entry.flat:focus, treeview entry:focus {
   border-color: #2eb398;
+}
+
+.entry-tag {
+  padding: 5px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  background-color: #2eb398;
+  border-color: transparent;
+  color: #ffffff;
+}
+
+:dir(ltr) .entry-tag {
+  margin-left: 8px;
+  margin-right: -6px;
+}
+
+:dir(rtl) .entry-tag {
+  margin-left: -6px;
+  margin-right: 8px;
+}
+
+:not(:backdrop) .entry-tag.button:hover {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 @keyframes needs_attention {
@@ -4163,15 +4190,19 @@ expander arrow:checked {
   -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
 }
 
+expander arrow:disabled {
+  color: rgba(39, 49, 52, 0.55);
+}
+
 calendar {
   color: #273134;
   border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 2px;
-  padding: 0 6px;
+  border-radius: 3px;
+  padding: 2px;
 }
 
 calendar:selected {
-  border-radius: 3px;
+  border-radius: 1.5px;
 }
 
 calendar.header {
@@ -4318,7 +4349,7 @@ paned .sidebar.left, paned .sidebar.right, paned .sidebar.left:dir(rtl), paned .
 }
 
 stacksidebar row {
-  padding: 4px 4px;
+  padding: 10px 4px;
 }
 
 stacksidebar row > label {
@@ -4942,6 +4973,25 @@ headerbar button.titlebutton.minimize:active {
   background-image: -gtk-scaled(url("assets/titlebutton-restore-active.png"), url("assets/titlebutton-restore-active@2.png"));
 }
 
+popover.emoji-picker {
+  padding: 0;
+}
+
+popover.emoji-picker scrolledwindow {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.emoji {
+  min-width: 2.5em;
+  min-height: 2.5em;
+  padding: 0;
+}
+
+.emoji widget {
+  border-radius: 3px;
+  transition: all 0.1s cubic-bezier(0, 0, 0.2, 1);
+}
+
 filechooser placessidebar.sidebar row.sidebar-row.has-open-popup:selected, filechooser placessidebar.sidebar row.sidebar-row:selected, filechooser placessidebar.sidebar row.sidebar-row:selected:hover, filechooser placessidebar.sidebar row.sidebar-row:active:hover,
 .nautilus-window placessidebar.sidebar row.sidebar-row.has-open-popup:selected,
 .nautilus-window placessidebar.sidebar row.sidebar-row:selected,
@@ -4949,11 +4999,11 @@ filechooser placessidebar.sidebar row.sidebar-row.has-open-popup:selected, filec
 .nautilus-window placessidebar.sidebar row.sidebar-row:active:hover, .budgie-popover.budgie-menu button:checked, .atril-window scrolledwindow.frame > .view:selected, .atril-window scrolledwindow.frame > .view:active,
 .xreader-window scrolledwindow.frame > .view:selected,
 .xreader-window scrolledwindow.frame > .view:active, .caja-desktop > widget.entry:selected, .caja-desktop > widget.entry:focus:selected, #MozillaGtkWidget > widget > scrolledwindow > textview text:selected, #MozillaGtkWidget > widget > scrolledwindow > textview text:selected:focus,
-#MozillaGtkWidget > widget > scrolledwindow > textview text selection, .nemo-window .nemo-window-pane widget.entry:selected:focus, .nemo-window .nemo-window-pane widget.entry:selected, .nemo-window .nemo-places-sidebar .places-treeview:selected, .nemo-window .nemo-places-sidebar .places-treeview:selected:hover, .emoji widget:hover, .view:selected, .view:selected:focus, textview text selection:focus, textview text selection, iconview:selected, iconview:selected:focus, flowbox flowboxchild:selected, entry selection:focus, entry selection, menuitem.button.flat:active, menuitem.button.flat:active arrow, menuitem.button.flat:selected, menuitem.button.flat:selected arrow,
+#MozillaGtkWidget > widget > scrolledwindow > textview text selection, .nemo-window .nemo-window-pane widget.entry:selected:focus, .nemo-window .nemo-window-pane widget.entry:selected, .nemo-window .nemo-places-sidebar .places-treeview:selected, .nemo-window .nemo-places-sidebar .places-treeview:selected:hover, .view:selected, .view:selected:focus, textview text selection:focus, textview text selection, iconview:selected, iconview:selected:focus, flowbox flowboxchild:selected, entry selection:focus, entry selection, menuitem.button.flat:active, menuitem.button.flat:active arrow, menuitem.button.flat:selected, menuitem.button.flat:selected arrow,
 modelbutton.flat:active,
 modelbutton.flat:active arrow,
 modelbutton.flat:selected,
-modelbutton.flat:selected arrow, treeview.view:selected, treeview.view:selected:focus, row:selected, calendar:selected {
+modelbutton.flat:selected arrow, treeview.view:selected, treeview.view:selected:focus, row:selected, calendar:selected, .emoji widget:hover {
   background-color: #2eb398;
   color: #ffffff;
 }
@@ -4963,11 +5013,11 @@ filechooser placessidebar.sidebar row.sidebar-row:disabled:selected, filechooser
 .nautilus-window placessidebar.sidebar row.sidebar-row:disabled:active:hover, .budgie-popover.budgie-menu button:disabled:checked, .atril-window scrolledwindow.frame > .view:disabled:selected, .atril-window scrolledwindow.frame > .view:disabled:active,
 .xreader-window scrolledwindow.frame > .view:disabled:selected,
 .xreader-window scrolledwindow.frame > .view:disabled:active, .caja-desktop > widget.entry:disabled:selected, #MozillaGtkWidget > widget > scrolledwindow > textview text:disabled:selected,
-#MozillaGtkWidget > widget > scrolledwindow > textview text selection:disabled, .nemo-window .nemo-window-pane widget.entry:disabled:selected, .nemo-window .nemo-places-sidebar .places-treeview:disabled:selected, .emoji widget:disabled:hover, .view:disabled:selected, textview text selection:disabled, iconview:disabled:selected, iconview:disabled:selected:focus, flowbox flowboxchild:disabled:selected, entry selection:disabled, menuitem.button.flat:disabled:active, menuitem.button.flat:active arrow:disabled, menuitem.button.flat:disabled:selected, menuitem.button.flat:selected arrow:disabled,
+#MozillaGtkWidget > widget > scrolledwindow > textview text selection:disabled, .nemo-window .nemo-window-pane widget.entry:disabled:selected, .nemo-window .nemo-places-sidebar .places-treeview:disabled:selected, .view:disabled:selected, textview text selection:disabled, iconview:disabled:selected, iconview:disabled:selected:focus, flowbox flowboxchild:disabled:selected, entry selection:disabled, menuitem.button.flat:disabled:active, menuitem.button.flat:active arrow:disabled, menuitem.button.flat:disabled:selected, menuitem.button.flat:selected arrow:disabled,
 modelbutton.flat:disabled:active,
 modelbutton.flat:active arrow:disabled,
 modelbutton.flat:disabled:selected,
-modelbutton.flat:selected arrow:disabled, row:disabled:selected, calendar:disabled:selected {
+modelbutton.flat:selected arrow:disabled, row:disabled:selected, calendar:disabled:selected, .emoji widget:disabled:hover {
   color: #97d9cc;
 }
 
@@ -4977,56 +5027,6 @@ row:selected label, label:selected {
 
 row:selected label:disabled, label:disabled:selected {
   color: #97d9cc;
-}
-
-/*********
- * Emoji *
- *********/
-popover.emoji-picker {
-  padding: 0;
-}
-
-popover.emoji-picker entry {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  box-shadow: none;
-  border-width: 0 0 1px 0;
-  padding: 4px 12px;
-}
-
-popover.emoji-picker scrolledwindow {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-}
-
-button.emoji-section {
-  margin-top: -1px;
-  padding: 4px 12px;
-  border-radius: 0;
-  outline-offset: -4px;
-  box-shadow: none;
-  border: none;
-  transition-duration: 0ms;
-}
-
-button.emoji-section:first-child {
-  border-radius: 0 0 0 2px;
-}
-
-button.emoji-section:last-child {
-  border-radius: 0 0 2px 0;
-}
-
-.emoji {
-  min-width: 3em;
-  min-height: 3em;
-  padding: 0;
-  font-size: large;
-}
-
-.emoji widget {
-  border-radius: 3px;
-  transition: all 0.1s cubic-bezier(0, 0, 0.2, 1);
 }
 
 terminal-window.background.csd,
@@ -9962,7 +9962,7 @@ filechooser placessidebar.sidebar scrollbar trough,
 @define-color selected_bg_color #2eb398;
 @define-color selected_fg_color #ffffff;
 @define-color insensitive_bg_color #fcfcfc;
-@define-color insensitive_fg_color alpha(rgba(39, 49, 52, 0.55), 0.5);
+@define-color insensitive_fg_color alpha(#273134, 0.5);
 @define-color insensitive_base_color #ffffff;
 @define-color theme_unfocused_fg_color #273134;
 @define-color theme_unfocused_text_color #303d41;
@@ -9976,7 +9976,6 @@ filechooser placessidebar.sidebar scrollbar trough,
 @define-color placeholder_text_color #A8A8A8;
 @define-color link_color #248a76;
 @define-color content_view_bg #ffffff;
-/* Very contrasty background for text views (@theme_text_color foreground) */
 @define-color text_view_bg #ffffff;
 @define-color wm_title alpha(#273134, 0.8);
 @define-color wm_unfocused_title alpha(#273134, 0.5);
@@ -9984,6 +9983,7 @@ filechooser placessidebar.sidebar scrollbar trough,
 @define-color wm_bg_unfocused white;
 @define-color wm_highlight #fafafa;
 @define-color wm_shadow alpha(black, 0.35);
+@define-color wm_border #e1e1e1;
 @define-color wm_button_close_bg #f46067;
 @define-color wm_button_close_hover_bg #f68086;
 @define-color wm_button_close_active_bg #f13039;
