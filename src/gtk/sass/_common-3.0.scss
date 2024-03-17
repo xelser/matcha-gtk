@@ -3781,7 +3781,10 @@ popover.emoji-picker {
     border-radius: 3px;
     transition: all 0.1s cubic-bezier(0, 0, 0.2, 1);
 
-    &:hover { @extend %selected_items; }
+    &:hover {
+      background-color: lighten($bg_color, 10%);
+      color: $fg_color;
+    }
   }
 }
 

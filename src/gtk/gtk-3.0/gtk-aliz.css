@@ -4996,6 +4996,11 @@ popover.emoji-picker scrolledwindow {
   transition: all 0.1s cubic-bezier(0, 0, 0.2, 1);
 }
 
+.emoji widget:hover {
+  background-color: white;
+  color: #323232;
+}
+
 filechooser placessidebar.sidebar row.sidebar-row.has-open-popup:selected, filechooser placessidebar.sidebar row.sidebar-row:selected, filechooser placessidebar.sidebar row.sidebar-row:selected:hover, filechooser placessidebar.sidebar row.sidebar-row:active:hover,
 .nautilus-window placessidebar.sidebar row.sidebar-row.has-open-popup:selected,
 .nautilus-window placessidebar.sidebar row.sidebar-row:selected,
@@ -5007,7 +5012,7 @@ filechooser placessidebar.sidebar row.sidebar-row.has-open-popup:selected, filec
 modelbutton.flat:active,
 modelbutton.flat:active arrow,
 modelbutton.flat:selected,
-modelbutton.flat:selected arrow, treeview.view:selected, treeview.view:selected:focus, row:selected, calendar:selected, .emoji widget:hover {
+modelbutton.flat:selected arrow, treeview.view:selected, treeview.view:selected:focus, row:selected, calendar:selected {
   background-color: #F0544C;
   color: #ffffff;
 }
@@ -5021,7 +5026,7 @@ filechooser placessidebar.sidebar row.sidebar-row:disabled:selected, filechooser
 modelbutton.flat:disabled:active,
 modelbutton.flat:active arrow:disabled,
 modelbutton.flat:disabled:selected,
-modelbutton.flat:selected arrow:disabled, row:disabled:selected, calendar:disabled:selected, .emoji widget:disabled:hover {
+modelbutton.flat:selected arrow:disabled, row:disabled:selected, calendar:disabled:selected {
   color: #f8aaa6;
 }
 
